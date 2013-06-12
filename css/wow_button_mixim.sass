@@ -1,0 +1,94 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/text-shadow"
+@import "compass/css3/images"
+@import "compass/css3/opacity"
+
+$brand-grey-1: #333333
+$brand-grey-3: #707070
+$brand-grey-5: #BBBBBB
+$brand-grey-6: #D5D5D5
+$brand-grey-7: #EBEBEB
+$brand-grey-9: #E9e9e9
+$brand-lightGrey-2: #f7f7f7
+
+=teambox_button_base
+  background-color: $brand-grey-7
+  +background-image(linear-gradient($brand-lightGrey-2, $brand-grey-7))
+  +border-radius(2px)
+  +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6))
+  +text-shadow(0 1px 0 white(1))
+  position: relative
+  min-width: 65px
+  text-align: center
+  font-family: $sans
+  position: relative
+  border: 1px solid $brand-grey-5
+  color: $brand-grey-1
+  cursor: pointer
+  display: inline-block
+  font-size: $fs
+  font-weight: normal
+  outline: none
+  padding: 9px 14px 8px
+  text-decoration: none
+  white-space: nowrap
+  vertical-align: middle
+  line-height: 20px
+  text-transform: uppercase
+  margin: 0 3px 0 0
+  position: relative
+  .tip-grey
+    white-space: normal
+    display: none
+    position: absolute
+    left: 0
+    bottom: 40px
+    width: 250px
+    margin-left: 0
+    text-transform: none
+
+  // Tweak to styles for -moz
+  button::-moz-focus-inner
+    border: 0
+    padding: 0
+
+  .unbold
+    font-weight: 400
+
+  &:hover
+    +hover_state_button
+    .tip-grey
+      display: block
+
+  &:active, &.active
+    +active_state_button
+
+  &:disabled, &.disabled
+    +opacity(0.5)
+    +text-shadow(0 0px 0 white(0))
+    background-color: $brand-grey-9
+    background-image: none
+    color: $brand-grey-3
+    +box-shadow(0 0 0 rgba(0, 0, 0, 0))
+    +text-shadow(0 1px 0 white(0.8))
+    cursor: auto
+    .tip-grey
+      display: none !important
+
+// This extend module is used in active state of buttons and open state of select menu buttons
+//
+// Compatible in all
+=active_state_button
+  +text-shadow(0 0px 0 white(0))
+  background-image: none
+  +box-shadow(0 1px 2px rgba(0, 0, 0, 0.2) inset)
+
+// This extend module is used in hover state of buttons and open state of select menu buttons
+//
+// Compatible in all
+=hover_state_button
+  +background-image(linear-gradient($brand-lightGrey-2, $brand-grey-6))
+  // +box-shadow(0 2px 1px rgba(0, 0, 0, .13), inset 0 1px 1px rgba(255, 255, 255, 0.6))
+  +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6))
+  color: $brand-grey-1

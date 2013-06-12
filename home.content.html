@@ -1,0 +1,126 @@
+<div class="home-wow-intro">
+  <img src="/theme/51a38d107a507261b200004c/stylesheets/images/home-image-provisional.jpg" class="home-wow-intro-background">
+  <div class="home-wow-intro-content">
+    <div class="container_24">
+      <div class="grid_12 prefix_6 suffix_6 alpha omega home-wow-intro-text">
+        <h2>{{ item.data.intro_title }}</h2>
+        <p>{{ item.data.intro_text }}</p>
+      </div>
+      <div class="grid_24 home-wow-intro-image">
+        <div class="home-wow-bubble task">{{ item.data.bubble_this_is_task }}</div>
+        <div class="home-wow-bubble resolve">{{ item.data.bubble_resolve_one_click }}</div>
+        <div class="home-wow-bubble comments">{{ item.data.bubble_comments }}</div>
+        <div class="home-wow-bubble who">{{ item.data.bubble_who }}</div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div id="js-stiky-target" class="home-wow-call-to-action-form-wrapper" data-stiky-height="850">
+      <div class="container_24">
+        <div class="grid_16 prefix_4 suffix_4 alpha omega home-wow-call-to-action-text ">
+          <h2><span>{{ item.data.call_to_action_text_free }}</span> {{ item.data.call_to_action_text_title }}</h2>
+          <p>{{ item.data.call_to_action_text }}</p>
+        </div>
+        <div class="grid_12 prefix_6 suffix_6 alpha omega home-wow-call-to-action-form">
+          <form action="https://teambox.com/users" method="POST" accept-charset="UTF-8" data-placeholdersubmit="true">
+            <div class="home-wow-input-button-block ">
+              <input type="Submit" value="Get started - free!" class="wow-button primary wow-button-nlbr">
+              <div class="fancy-input">
+                <label for="id_email">Your email</label>
+                <input type="text" placeholder="Your email" name="user[email]" id="id_email" data-currentplaceholder="Your email" class="placeholderspolyfill" autofocus="autofocus">
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="google-signin">
+              <span class="google-signin-text">Or use</span>
+              <a class="wow-button wow-button-small" href="https://teambox.com/auth/google_oauth2">Google Sign in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+<div class="home-wow-feature-intro-items">
+  <div class="container_24">
+    <div class="grid_10 prefix_7 suffix_7 alpha omega home-wow-section">
+      <h2>{{ item.data.feature_intro_title }}</h2>
+      <p>{{ item.data.feature_intro_text }}</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="container_24">
+    <div class="grid_24 alpha omega">
+      <div class="home-wow-feature-intro-item">
+        <div class="home-wow-feature-intro-item-icon feature_intro_task"><!----></div>
+        <p>{{ item.data.feature_intro_task }}</p>
+      </div>
+      <div class="home-wow-feature-intro-item">
+        <div class="home-wow-feature-intro-item-icon feature_team"><!----></div>
+        <p>{{ item.data.feature_team }}</p>
+      </div>
+      <div class="home-wow-feature-intro-item">
+        <div class="home-wow-feature-intro-item-icon feature_intro_trusted"><!----></div>
+        <p>{{ item.data.feature_intro_trusted }}</p>
+      </div>
+      <div class="home-wow-feature-intro-item">
+        <div class="home-wow-feature-intro-item-icon feature_intro_files"><!----></div>
+        <p>{{ item.data.feature_intro_files }}</p>
+      </div>
+      <div class="home-wow-feature-intro-item">
+        <div class="home-wow-feature-intro-item-icon feature_intro_accesible"><!----></div>
+        <p>{{ item.data.feature_intro_accesible }}</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+<div class="home-wow-cta-centered">
+  <div class="container_24">
+    <div class="grid_10 prefix_7 suffix_7 alpha omega home-wow-section">
+      <a class="wow-button wow-button-big" href="#">{{ item.data.feature_intro_cta }}</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="home-wow-app-screenshot-wrapper">
+  <div class="container_24">
+    <div class="grid_18 prefix_3 suffix_3 alpha omega home-wow-section">
+      <h2>{{ item.data.screenshot_title }}</h2>
+      <p>{{ item.data.screenshot_text }}</p>
+    </div>
+    <div class="grid_24 alpha omega home-wow-app-screenshot"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="home-wow-quote">
+  <div class="container_24">
+    <div class="grid_24 alpha omega home-wow-quote-content">
+      <span class="home-wow-quote-logo"></span> &mdash;
+      {{ item.data.quote }}
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="home-wow-clients">
+  <div class="container_24">
+    <h2>{{ item.data.clients_claim }}</h2>
+    <div class="grid_24 alpha omega home-wow-clients-logos"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="home-wow-cta-centered">
+  <div class="container_24">
+    <div class="grid_10 prefix_7 suffix_7 alpha omega home-wow-section">
+      <a class="wow-button wow-button-big" href="#">{{ item.data.customers_love_cta }}</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
