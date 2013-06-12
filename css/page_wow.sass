@@ -132,6 +132,28 @@ $home_wow_intro_height: 310px
       display: inline-block
       color: white
       margin: 0 4px 0 0
+    .google-signin-buttom
+      padding-left: 36px
+      position: relative
+    .google-signin-logo
+      background: url("/theme/#{$theme}/stylesheets/images/wow-google-g.png") no-repeat center center
+      display: inline-block
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      height: 100%
+      width: 25px
+      vertical-align: middle
+      margin: 0 4px 0 0
+      border-right: 1px solid $gray60
+      &:after
+        border-right: 1px solid rgba(255,255, 255, 1)
+        content: ""
+        position: absolute
+        right: -2px
+        top: 0
+        bottom: 0
     .home-wow-input-button-block
       .wow-button
         float: right
@@ -174,7 +196,7 @@ $home_wow_intro_height: 310px
     a
       text-decoration: underline
 .home-wow-feature-intro-items
-  padding: 40px 0 0 0
+  padding: 0
 .home-wow-feature-intro-item
   text-align: center
   width: 20%
@@ -266,7 +288,6 @@ $home_wow_intro_height: 310px
 .page-wow-content
   padding: 0 0 20px 0
   background-color: white
-
 
 
 /* footer */
