@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teambox - {{ item.title }}</title>
+  <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+  <meta name="description" content="{{ item.data.description | truncate: 160 }}">
+  <meta name="author" content="{{ item.data.author }}">
+
+  <link href='http://teambox.com/favicon.ico' rel='shortcut icon'>
+
+  <link rel="canonical" href="http://teambox.com{{ item.path }}" />
+  <link rel="prerender" href="https://teambox.com/login">
+
+  {{ site | blog_feed_link_tags }}
+
+  {% include 'webfont' %}
+  {{ 'base,page,page_wow' | stylesheet }}
+  <!-- javascripts -->
+  {{ 'jquery.min,underscore.min,jquery.placeholder,tb.sticky,tb.redirect,tb.testimonials,tb.localize,index' | javascript }}
+  <script src="//cdn.optimizely.com/js/8039275.js"></script>
+</head>
+
+<body class='page-wow public_pages project {{ item.data.body_class }}'>
+  <script type="text/javascript">var WRInitTime=(new Date()).getTime(); /* Clicktale */</script>
+
+{% include 'language.selector' %}
+{% include 'navigation.bar_wow' %}
