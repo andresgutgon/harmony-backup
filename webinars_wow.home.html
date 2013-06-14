@@ -1,0 +1,61 @@
+{% include 'header_wow' %}
+
+{{ item.children | index: 0 | assign_to: 'videotutorials' }}
+{{ videotutorials.children | assign_to: 'videotutorials_list' }}
+{{ videotutorials_list.first | assign_to: 'first_video' }}
+
+{{ item.children | index: 1 | assign_to: 'upcoming_videotutorials' }}
+{{ upcoming_videotutorials.children | assign_to: 'upcoming_videotutorials_list' }}
+
+<div class="current-videotutorial">
+  <div class="container_24">
+    <div class="grid_20 prefix_2 suffix_2 alpha omega">
+      <h1>{{ item.title }}</h1>
+    </div>
+    <div class="grid_18 prefix_3 suffix_3 alpha omega">
+      <iframe src="http://player.vimeo.com/video/{{ first_video.data.vimeo_video_id }}?portrait=0&title=0&byline=0" width="710" height="440" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+    <div class="grid_12 prefix_6 suffix_6 alpha omega current-videotutorial-description">
+      <h2>{{ first_video.title }}</h2>
+      <p>{{ first_video.data.excerpt }}</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="list-videotutorial">
+  <div class="container_24">
+    {% for upcoming_item in upcoming_videotutorials_list %}
+      <div class="grid_8">
+        <div class="list-videotutorial-item">
+          <div class="list-videotutorial-item-video">
+            <a href="{{ upcoming_item.data.register_now_link }}" target="_blank" class="wow-button primary list-videotutorial-register">Register for Free</a>
+            <div class="list-videotutorial-item-title">
+              <span class="soft">Next Tutorial:</span>
+              {{ upcoming_item.data.upcoming_time | date: '%b %d %l:%M%p'  }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for upcoming_item in videotutorials_list %}
+      <div class="grid_8">
+        <div class="list-videotutorial-item">
+          <div class="list-videotutorial-item-video">
+            <a href="{{ upcoming_item.data.register_now_link }}" target="_blank" class="wow-button primary list-videotutorial-register">Register for Free</a>
+            <div class="list-videotutorial-item-title">
+              <span class="soft">Next Tutorial:</span>
+              {{ upcoming_item.data.upcoming_time | date: '%b %d %l:%M%p'  }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {% endfor %}
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% include 'footer_wow' %}

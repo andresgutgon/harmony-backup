@@ -9,24 +9,72 @@ $green_wow: #9AC542
 $black_wow: #4A4A4A
 $top_message: #E6E6DE
 $green_alt_wow: #43AF80
-$screen_shot_bg: #E6E6DE
+$green_olive: #E6E6DE
 $theme: "51a38d107a507261b200004c"
 $fancy_border_color: #023F56
 $footer_wow_bg: #ABACB1
 
 /* general style for page */
+/* Here we reset OLD styles via css */
 html body.page-wow
   background-image: none
   background-color: $gray28
-  &.home
-    .top-navigation
+  &.sub-navigation-off
+    .sub-navigation
       display: none
+
+/* double page */
+.double-page
+  background-color: white
+  .headers
+    h1
+      text-align: left
+    p.subtitle
+      text-align: left
+  #first-part
+    margin-bottom: 0
+    hr
+      margin-top: 25px
+  .page
+    +border-radius(0)
+    +box-shadow(0 0 0 rgba(255,255,255, 0))
+    padding-top: 0
+  #second-part
+    .page
+      background-color: transparent
+      h2
+        text-align: left
+.double-page-dark
+  background-color: $green_olive
+
 /* stiky form */
 .page-wow #sticky-form
   +box-shadow(0 0 2px rgba(0, 0, 0, 0.3))
   background-image: none
   background-color: white
   border-bottom: 0
+
+/* Sub navigation wow */
+.sub-navigation
+  background-color: white
+  border-top: 4px solid $green_olive
+  padding-bottom: 10px
+.sub-navigation-inner
+  padding: 10px 0
+  border-bottom: 1px solid $green_olive
+.sub-navigation-section
+  text-transform: uppercase
+  font-weight: 700
+.sub-navigation-item
+  font-size: 13px
+  line-height: 22px
+  padding: 0 4px
+  display: inline-block
+  margin: 0 5px 0 0
+  &.is-selected
+    background-color: $blue_wow
+    color: white
+
 
 /* top message */
 .top-message-wow
@@ -65,7 +113,7 @@ $header_wow_line_height: 30px
     display: inline-block
     text-transform: uppercase
     color: $gray80
-    font-size: $lh-regular
+    font-size: 13px
     font-weight: 400
     line-height: $header_wow_line_height
 
@@ -147,7 +195,7 @@ $home_wow_intro_height: 310px
     padding: 0 40px
 .home-wow-call-to-action-form-wrapper
   background-color: rgba(0,0,0, 0.5)
-  padding: 40px 0
+  padding: 35px 0
 
 .home-wow-call-to-action-form
   &[class^="grid_"]
@@ -200,7 +248,7 @@ $home_wow_intro_height: 310px
         label
           display: none
         input
-          +box-shadow(inset 0px 3px 0px rgba(186, 186, 186, 0.6))
+          +box-shadow(inset 1px 3px 1px rgba(0, 0, 0, 0.1))
           +border-radius(4px)
           +box-sizing(border-box)
           +border-radius(4px 0 0 4px)
@@ -213,9 +261,9 @@ $home_wow_intro_height: 310px
           font-size: $fs
           font-weight: 400
           &:focus
+            +box-shadow(inset 1px 3px 1px rgba(0, 0, 0, 0.1))
             outline: none
             border-color: $fancy_border_color
-            +box-shadow(inset 0px 3px 0px rgba(186, 186, 186, 0.6))
           &.placeholderspolyfill
             color: $gray30 !important
             font-family: $sans
@@ -268,7 +316,7 @@ $home_wow_intro_height: 310px
   .wow-button-big
     min-width: 150px
 .home-wow-app-screenshot-wrapper
-  background-color: $screen_shot_bg
+  background-color: $green_olive
 .home-wow-app-screenshot
   height: 279px
   background: url("/theme/#{$theme}/stylesheets/images/wow-screen.png") no-repeat
@@ -318,11 +366,39 @@ $home_wow_intro_height: 310px
   vertical-align: middle
   position: relative
   top: -3px
-/* page generic */
+
+/* page generic add full DIV with background color. */
 .page-wow-content
   padding: 0 0 20px 0
   background-color: white
 
+/* tutorials */
+.current-videotutorial
+  background-color: white
+  iframe
+    border: 1px solid #989898
+  h1
+    font-weight: 400
+    text-align: center
+.current-videotutorial-description
+  h2
+    font-size: $fs-giga
+    color: $gray90
+    font-weight: 400
+    margin: 15px 0 10px 0
+  p
+    font-size: 13px
+    color: $gray70
+.list-videotutorial
+  background-color: $green_olive
+  padding: 20px 0
+.list-videotutorial-item
+  margin: 0 10px 0 0
+.list-videotutorial-item-video
+  border: 1px solid #979A93
+  background-color: $gray28
+  min-height: 168px
+  position: relative
 
 /* footer */
 .footer-wow
@@ -331,6 +407,7 @@ $home_wow_intro_height: 310px
 .footer-wow-column
   ul
     list-style: none
+    padding: 0
   a, a:hover
     color: $gray03
     font-size: 14px
